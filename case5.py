@@ -52,7 +52,7 @@ if __name__=='__main__':
 
     #querying the db
     c = sqlite3.connect(history_db)
-    cursor = c.cursor()gi
+    cursor = c.cursor()
     select_statement = "SELECT urls.url, urls.visit_count FROM urls, visits WHERE urls.id = visits.url;"
     cursor.execute(select_statement)
 
