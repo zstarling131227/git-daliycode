@@ -36,3 +36,9 @@ print("singleNumber1", singleNumber1(data1))
 print("singleNumber2", singleNumber2(data1))
 print("singleNumber1", singleNumber1(list1))
 print("singleNumber2", singleNumber2(list(list1)))
+
+print(list1[-1])
+print(list1[:])
+
+
+
