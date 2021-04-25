@@ -5,7 +5,7 @@
 
 
 # 9_9乘法表
-
+'''
 i = 0
 while i < 9:
     i += 1
@@ -16,3 +16,7 @@ while i < 9:
         # print('%d*%d=%2d' % (j, i, i * j), end=" ")
         print('%d*%d=%d' % (j, i, i * j), end="\t")
     print("")
+'''
+
+
+
