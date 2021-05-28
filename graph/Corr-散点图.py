@@ -7,6 +7,8 @@ midwest = pd.read_csv("E:\桌面\datasets\midwest_filter.csv")
 catagories = np.unique(midwest['category'])
 
 colors = [plt.cm.Set1(i / float(len(catagories) - 1)) for i in range(len(catagories))]
+
+# figsize=(10, 6)表示行刻度为10，列刻度为6。dpi参数指定绘图对象的分辨率。背景色为白色，边框线为黑色。
 plt.figure(figsize=(10, 6), dpi=100, facecolor="w", edgecolor="k")
 for i, catagory in enumerate(catagories):
     plt.scatter('area', 'poptotal', data=midwest.loc[midwest.category == catagory, :], s=20, c=colors[i],
