@@ -37,13 +37,15 @@ plt.show()
 # Step 3: Encircling
 # https://stackoverflow.com/questions/44575681/how-do-i-encircle-different-data-sets-in-scatter-plot
 def encircle(x, y, ax=None, **kw):  # 定义encircle函数，圈出重点关注的点
-    # 创建ax子图
+    # 创建ax子图。gca()得到当前的子图、gcf得到当前的图表
     if not ax: ax = plt.gca()
-    # np.r_是按列连接两个矩阵，就是把两矩阵上下相加，要求列数相等。
+    # np.r_是按列连接两个矩阵，就
+    # 是把两矩阵上下相加，要求列数相等。
     # np.c_是按行连接两个矩阵，就是把两矩阵左右相加，要求行数相等。
     p = np.c_[x, y]
     # 凸包算法：，给定二维平面上的点集，凸包就是将最外层的点连接起来构成的凸多边型，它能包含点集中所有的点。
     hull = ConvexHull(p)
+    print(hull)
     # 创建相对应的形状，常用的是Rectangle矩形、Circle圆形、Polygon多边形这三个，plt.形状名(x，y)
     poly = plt.Polygon(p[hull.vertices, :], **kw)
     # 将创建的形状图形添加进“ Axes ”对象里面去，即我们所创建的ax对象，此处指的是散点图
